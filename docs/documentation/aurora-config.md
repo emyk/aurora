@@ -310,13 +310,15 @@ a single vault/file.
 
 ### NTA specific integrations
 
-| path                   | default | description                                                                                      |
-| ---------------------- | ------- | ------------------------------------------------------------------------------------------------ |
-| webseal                | false   | Toggle to expose application through WebSeal.                                                    |
-| webseal/host           |         | Set this to change the default prefix in WebSeal                                                 |
-| webseal/roles          |         | Set roles required to access this route. This can either be set as CSV or as an array of strings |
-| certificate            | false   | Toggle to add a certificate with CommonName $groupId.$name.                                      |
-| certificate/commonName |         | Generate an STS certificate with the given commonName.                                           |
+| path                   | default | description                                                                                       |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------- |
+| webseal                | false   | Toggle to expose application through WebSeal.                                                     |
+| webseal/host           |         | Set this to change the default prefix in WebSeal                                                  |
+| webseal/roles          |         | Set roles required to access this route. This can either be set as CSV or as an array of strings  |
+| certificate            | false   | DEPRECTAED, use STS Toggle to add a certificate with CommonName $groupId.$name.                   |
+| certificate/commonName |         | DEPRECATED, use STS Generate an STS certificate with the given commonName.                        | 
+| sts                    | false   | use STS Toggle to add a certificate with CommonName $groupId.$name. Will expose STS_DISCOVERY_URL |
+| sts/cn                 |         | use STS Generate an STS certificate with the given commonName.                                    |
 
 NTA has the following technologies that can be automated with the above fields
 
