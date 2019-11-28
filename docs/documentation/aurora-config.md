@@ -298,14 +298,12 @@ a single vault/file.
 ### Mounting volumes
 
 | path                             | default       | description                                                                                                                                         |
-| -------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `mounts/<mountName>/type`        |               | One of Secret, ConfigMap, PVC. Required for each mount.                                                                                             |
-| `mounts/<mountName>/path`        |               | Path to the volume in the container. Required for each mount.                                                                                       |
-| `mounts/<mountName>/mountName`   | `<mountName>` | Override the name of the mount in the container.                                                                                                    |
-| `mounts/<mountName>/volumeName`  | `<mountName>` | Override the name of the volume in the DeploymentConfig.                                                                                            |
-| `mounts/<mountName>/exists`      | false         | If this is set to true the existing resource must exist already.                                                                                    |
-| `mounts/<mountName>/content`     |               | If type is ConfigMap, set this to a content that will be put in that Volume. Exist must be true.                                                    |
-| `mounts/<mountName>/content`     |               | If type is ConfigMap, set this to a content that will be put in that Volume. Exist must be true.                                                    |
+| -------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `mounts/<mountName>/type`        |               | One of Secret, PVC. Required for each mount.                                                                              |
+| `mounts/<mountName>/path`        |               | Path to the volume in the container. Required for each mount.                                                             |
+| `mounts/<mountName>/mountName`   | `<mountName>` | Override the name of the mount in the container.                                                                          |
+| `mounts/<mountName>/volumeName`  | `<mountName>` | Override the name of the volume in the DeploymentConfig.                                                                  |
+| `mounts/<mountName>/exists`      | false         | If this is set to true the existing resource must exist already. Must bee set for PVC                                     |
 | `mounts/<mountName>/secretVault` |               | The name of the Vault to mount. This will mount the entire contents of the specified vault at the specified path. Type must be Secret, Exist false. |
 
 ### NTA specific integrations
